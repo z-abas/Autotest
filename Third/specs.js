@@ -1,3 +1,5 @@
+import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
+
 describe('Protractor DEMO App', function(){
     var firstNumber = element(by.model('first'));
     var secondNumber = element(by.model('second'));
