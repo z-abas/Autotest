@@ -4,10 +4,10 @@ export class OCLoginPage{
     usernameField = element(by.id('username'));
     passwordField = element(by.id('password'));
     loginBtn = element(by.buttonText('Login'));
-    operatorsConsole = 'http:localhost:4200'
+    
 
-    get(){
-        browser.get(this.operatorsConsole)
+    get(operatorsConsole){
+        browser.get(operatorsConsole)
     }
 
     enterCredentials(username: string, password: string){

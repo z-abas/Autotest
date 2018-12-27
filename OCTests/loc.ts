@@ -1,3 +1,6 @@
 import {browser, element, by} from 'protractor';
 
-export class 
+export class tspLocators {
+    tspName = element(by.name('name'))
+    
+}

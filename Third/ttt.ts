@@ -1,22 +1,32 @@
-import { timeout } from "q";
+import {browser, element, by, By, $, $$, ExpectedConditions, protractor} from 'protractor';
+import {Locators} from './Locators';
+import {LoginPageClass} from './login'
+import {TspPage} from './tspPage'
+import {TSPemail} from './TSPActions'
 
-import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 
-describe('OC test', function(){
-    it('Should read the value', function(){
-        browser.get('http://localhost:4200')
-        let usernameField = element(by.id('username'));
-        let passwordField = element(by.id('password'));
-        let loginBtn = element(by.buttonText('Login'));
+const locators = new Locators;
 
-        usernameField.sendKeys('permission');
-        passwordField.sendKeys('test');
-        loginBtn.click();
+describe('Login page', function(){
+    const login = new LoginPageClass();
+    it('Should log in', function(){
+        login.loginPage();
+        expect(browser.getTitle()).toEqual('Dashboard')
+    })
+    const tsp = new TspPage();
+    it('Should go to TSP', function(){
+        tsp.TSP();
+        expect(browser.getTitle()).toEqual('Toll Service Providers')
+    })
+    const tspEmail = new TSPemail();
+    it('Should change email', function(){
+        tspEmail.tspEmail();
+        browser.sleep(2000)
+        var test = locators.tspEmail.getText()
+        browser.sleep(2000);
 
-        browser.get('http://localhost:4200/#/tsp');
-        timeout(2000, 'ms');
-        //expect(browser.getTitle()).toEqual('Toll Service Providers')
+        expect(locators.tspEmail.getText()).toEqual('test@test.com')        
 
-    });
+    })
+})
 
-});
