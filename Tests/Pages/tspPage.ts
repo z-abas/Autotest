@@ -1,10 +1,12 @@
 import { browser, element, by, By, $, $$, ExpectedConditions, protractor } from 'protractor';
-import { Locators } from './Locators';
+import { TSPLocators } from '../Locators/TSPLocators';
+import { LoginLocators } from '../Locators/LoginLocators'
 
 export class TspPage {
     TSP() {
-        const locators = new Locators();
-        browser.get(locators.url + '/#/tsp')
+        const tspLocators = new TSPLocators();
+        const loginLocators = new LoginLocators();
+        browser.get(loginLocators.url + '/#/tsp')
     }
     constructor() { }
 }

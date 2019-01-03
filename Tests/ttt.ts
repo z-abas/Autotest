@@ -1,11 +1,13 @@
 import { browser, element, by, By, $, $$, ExpectedConditions, protractor } from 'protractor';
-import { Locators } from './Locators';
-import { LoginPageClass } from './login'
-import { TspPage } from './tspPage'
-import { TSPemail } from './TSPActions'
+import { LoginLocators } from './Locators/LoginLocators';
+import { TSPLocators } from './Locators/tspLocators';
+import { LoginPageClass } from '../Tests/Actions/login'
+import { TspPage } from '../Tests/Pages/tspPage'
+import { TSPemail } from '../Tests/Actions/TSPActions'
 import * as fs from "fs"
 
-const locators = new Locators;
+const loginLocators = new LoginLocators;
+const tspLocators = new TSPLocators;
 
 describe('Login page', function () {
     const login = new LoginPageClass();
@@ -22,7 +24,7 @@ describe('Login page', function () {
     it('Should change email', function () {
         tspEmail.tspEmail();
         browser.sleep(2000)
-        let test = ('Text is: ' + locators.tspEmail.getText());
+        let test = ('Text is: ' + tspLocators.tspEmail.getText());
         browser.sleep(2000);
 
         console.log('Text je: ', test);
@@ -37,7 +39,7 @@ describe('Login page', function () {
         browser.sleep(120000);
 
 
-        expect(locators.tspEmail.getText()).toEqual('test@test.com')
+        expect(tspLocators.tspEmail.getText()).toEqual('test@test.com')
 
     })
 })

@@ -1,12 +1,6 @@
 import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 
-export class Locators {
-// Login page
-    usernameField = element(by.id('username'));
-    passwordField = element(by.id('password'));
-    loginBtn1 = element(by.buttonText('Login'));
-    loginBtn = element(by.className('btn btn-default submit'))
-    url = 'http://localhost:4200';
+export class TSPLocators {
 
 //Toll Service Provide page
     tspEmail = element(by.id('email'))
