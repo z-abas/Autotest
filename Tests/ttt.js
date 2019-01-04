@@ -1,12 +1,13 @@
 "use strict";
 exports.__esModule = true;
 var protractor_1 = require("protractor");
-var Locators_1 = require("./Locators");
-var login_1 = require("./login");
-var tspPage_1 = require("./tspPage");
-var TSPActions_1 = require("./TSPActions");
-var fs = require("fs");
-var locators = new Locators_1.Locators;
+var LoginLocators_1 = require("./Locators/LoginLocators");
+var tspLocators_1 = require("./Locators/tspLocators");
+var login_1 = require("../Tests/Actions/login");
+var tspPage_1 = require("../Tests/Pages/tspPage");
+var TSPActions_1 = require("../Tests/Actions/TSPActions");
+var loginLocators = new LoginLocators_1.LoginLocators;
+var tspLocators = new tspLocators_1.TSPLocators;
 describe('Login page', function () {
     var login = new login_1.LoginPageClass();
     it('Should log in', function () {
@@ -21,19 +22,19 @@ describe('Login page', function () {
     var tspEmail = new TSPActions_1.TSPemail();
     it('Should change email', function () {
         tspEmail.tspEmail();
-        protractor_1.browser.sleep(2000);
-        var test = ('Text is: ' + locators.tspEmail.getText());
-        protractor_1.browser.sleep(2000);
-        console.log('Text je: ', test);
-        fs.writeFile("./sample.txt", test, function (err) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            ;
-            console.log("File has been created");
+    });
+    it('Should read changed email', function () {
+        tspLocators.tspEmail.getText().then(function (test) {
+            var emajl = test;
+            console.log('Text je: ', emajl);
+            expect(tspLocators.tspEmail.getText()).toBe('test@test.com');
+            /*fs.writeFile("./sample.txt", emajl, (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                };
+                console.log("File has been created");
+            });*/
         });
-        protractor_1.browser.sleep(120000);
-        expect(locators.tspEmail.getText()).toEqual('test@test.com');
     });
 });

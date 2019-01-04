@@ -7,7 +7,6 @@ export class TSPemail {
     tspEmail () {
         const locators = new TSPLocators;
         locators.tspEmail.clear()
-        browser.sleep(2000)
         locators.tspEmail.sendKeys('test@test.com');
         locators.tspSubmitBtn.click()
     };

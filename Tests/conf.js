@@ -3,10 +3,10 @@ exports.config={
 	
 		
 	specs: ['ttt.js'],
-	framework: 'jasmine2',
+	/*framework: 'jasmine2',
 	onPrepare: function(){
 		var jasmineReporters=require('C:/Users/zabas/Desktop/Protractor/node_modules/jasmine');
 		jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter(null, true, true));
 	
-	}
+	}*/
 };

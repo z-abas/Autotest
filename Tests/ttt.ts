@@ -21,26 +21,34 @@ describe('Login page', function () {
         expect(browser.getTitle()).toEqual('Toll Service Providers')
     })
     const tspEmail = new TSPemail();
+
     it('Should change email', function () {
+
         tspEmail.tspEmail();
-        browser.sleep(2000)
-        let test = ('Text is: ' + tspLocators.tspEmail.getText());
-        browser.sleep(2000);
 
-        console.log('Text je: ', test);
+    });
 
-        fs.writeFile("./sample.txt", test, (err) => {
-            if (err) {
-                console.error(err);
-                return;
-            };
-            console.log("File has been created");
+    it('Should read changed email', function(){
+                tspLocators.tspEmail.getText().then(function (test) {
+                let emajl = test;
+                console.log('Text je: ', emajl);
+
+                expect(tspLocators.tspEmail.getText()).toBe('test@test.com');
+
+
+                /*fs.writeFile("./sample.txt", emajl, (err) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    };
+                    console.log("File has been created");
+                });*/
+            });
         });
-        browser.sleep(120000);
 
 
-        expect(tspLocators.tspEmail.getText()).toEqual('test@test.com')
 
-    })
+
+    
 })
 
