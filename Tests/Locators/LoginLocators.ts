@@ -6,8 +6,8 @@ export class LoginLocators {
     passwordField = element(by.id('password'));
     loginBtn1 = element(by.buttonText('Login'));
     loginBtn = element(by.className('btn btn-default submit'))
-    url = 'http://localhost:4200';
-
+    urlLocal = 'http://localhost:4200';
+    urlStaging = 'http://188.130.168.34:8062'
     constructor(){}
 
 }

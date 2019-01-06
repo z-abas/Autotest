@@ -2,11 +2,11 @@ import { browser, element, by, By, $, $$, ExpectedConditions, protractor } from 
 import { LoginLocators } from '../Locators/LoginLocators';
 
 export class LoginPageClass {
-    loginPage() {
+    loginPage(username, password) {
         const locators = new LoginLocators();
-        browser.get(locators.url);
-        locators.usernameField.sendKeys('permission');
-        locators.passwordField.sendKeys('test');
+        browser.get(locators.urlStaging);
+        locators.usernameField.sendKeys(username);
+        locators.passwordField.sendKeys(password);
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
 
         
