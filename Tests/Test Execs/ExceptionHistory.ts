@@ -1,17 +1,17 @@
 import { browser, element, by, By, $, $$, ExpectedConditions } from 'protractor';
-import { LoginLocators } from './Locators/LoginLocators';
-import { LoginPageClass } from './Actions/login'
-import { ExceptionHistoryLocators } from './Locators/ExceptionHistoryLocators'
+import { LoginLocators } from '../Locators/LoginLocators';
+import { LoginPageClass } from '../Actions/login'
+import { ExceptionHistoryLocators } from '../Locators/ExceptionHistoryLocators'
 
 const login = new LoginPageClass;
 const exceptionHistoryLoc = new ExceptionHistoryLocators;
 const loginLoc = new LoginLocators;
 
 
-describe('test', function () {
+describe('Exception history elements test', function () {
 
     login.loginPage('permission', 'test')
-    browser.sleep(3000);
+    browser.sleep(2000);
     browser.get(loginLoc.urlStaging + '/#/analytics/exceptionsHistory');
 
     it('Search box labels presence', function () {
@@ -56,6 +56,8 @@ describe('test', function () {
     it('Chart Button present', function(){
         expect(exceptionHistoryLoc.chartButton.isPresent()).toBe(true)
     })
+
+
 
 })
 

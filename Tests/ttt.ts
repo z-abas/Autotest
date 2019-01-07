@@ -12,7 +12,7 @@ const tspLocators = new TSPLocators;
 describe('Login page', function () {
     const login = new LoginPageClass();
     it('Should log in', function () {
-        login.loginPage();
+        login.loginPage('permission', 'test');
         expect(browser.getTitle()).toEqual('Dashboard')
     })
     const tsp = new TspPage();

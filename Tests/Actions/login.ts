@@ -8,6 +8,7 @@ export class LoginPageClass {
         locators.usernameField.sendKeys(username);
         locators.passwordField.sendKeys(password);
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
+        browser.sleep(1000);
 
         
 

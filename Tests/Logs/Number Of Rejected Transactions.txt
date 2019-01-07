@@ -1,0 +1,21 @@
+Number Of Rejected Transactions
+Today's Transactions
+0
+06.01.2019
+NaN
+0
+05.01.2019
+NaN
+0
+04.01.2019
+NaN
+0
+03.01.2019
+NaN
+0
+02.01.2019
+NaN
+0
+01.01.2019
+NaN
+0

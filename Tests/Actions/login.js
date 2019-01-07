@@ -11,6 +11,7 @@ var LoginPageClass = /** @class */ (function () {
         locators.usernameField.sendKeys(username);
         locators.passwordField.sendKeys(password);
         protractor_1.browser.actions().sendKeys(protractor_1.protractor.Key.ENTER).perform();
+        protractor_1.browser.sleep(1000);
     };
     ;
     return LoginPageClass;

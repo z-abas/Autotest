@@ -12,6 +12,12 @@ export class ExceptionHistoryLocators {
     dateTo = element(by.id("dateTo"))
     searchButton = element(by.buttonText("Search"))
     chartButton = element(by.buttonText("Display As Chart"))
+    // Table
+    tableHeader = element.all(by)
+
+
+
+
     constructor() { }
 
 }

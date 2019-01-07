@@ -14,6 +14,8 @@ var ExceptionHistoryLocators = /** @class */ (function () {
         this.dateTo = protractor_1.element(protractor_1.by.id("dateTo"));
         this.searchButton = protractor_1.element(protractor_1.by.buttonText("Search"));
         this.chartButton = protractor_1.element(protractor_1.by.buttonText("Display As Chart"));
+        // Table
+        this.tableHeader = protractor_1.element.all(protractor_1.by);
     }
     return ExceptionHistoryLocators;
 }());
