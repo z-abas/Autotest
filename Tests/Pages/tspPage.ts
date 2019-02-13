@@ -6,7 +6,7 @@ export class TspPage {
     TSP() {
         const tspLocators = new TSPLocators();
         const loginLocators = new LoginLocators();
-        browser.get(loginLocators.url + '/#/tsp')
+        browser.get(loginLocators.urlStaging + '/#/tsp')
     }
     constructor() { }
 }

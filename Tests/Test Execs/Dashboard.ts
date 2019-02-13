@@ -30,14 +30,14 @@ describe('Dashboard elements test', function () {
         })
     })
 
-    it('Upcoming events title', function () {
-        dashboardLoc.kpiTitle.getText().then(function (events) {
+    it('Upcoming events title',() => {
+        dashboardLoc.kpiTitle.getText().then((events) => {
             expect(events[5]).toBe("Upcoming events")
         })
     })
 
-    it('Transactions and Files Performance', function () {
-        dashboardLoc.kpiTitle.getText().then(function (performance) {
+    it('Transactions and Files Performance',() => {
+        dashboardLoc.kpiTitle.getText().then((performance) => {
             expect(performance[6]).toBe("Transactions and Files Performance")
         })
     })
