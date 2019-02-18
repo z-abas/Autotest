@@ -16,7 +16,7 @@ const dashboardLoc = new DashboardLocators
 describe('test', function () {
 
 
-    login.loginPage('permission', 'test')
+    login.loginPage('super_user', 'superuser')
     browser.sleep(1500);
 
 
