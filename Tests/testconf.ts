@@ -3,6 +3,14 @@ exports.config={
 	
 		
 	specs: ['test.1.js'],
+	capabilities: {
+		browserName: 'chrome',
+		chromeOptions: {
+			args: [
+				'--start-maximized'
+			]
+		}
+	}
 	/*framework: 'jasmine2',
 	onPrepare: function(){
 		var jasmineReporters=require('C:/Users/zabas/Desktop/Protractor/node_modules/jasmine');
